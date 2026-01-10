@@ -1,0 +1,5 @@
+# Ignore SSH keys
+.ssh/
+*.pen
+*.key
+ajaz-github
