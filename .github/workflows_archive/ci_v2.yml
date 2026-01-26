@@ -1,0 +1,25 @@
+name: CI Practice v2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-test-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build step
+        run: echo "Build phase completed"
+
+      - name: Test step
+        run: echo "Tests passed successfully"
+
+      - name: Run step
+        run: echo "Application run simulated"
+
