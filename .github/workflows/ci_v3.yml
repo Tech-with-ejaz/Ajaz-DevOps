@@ -1,0 +1,29 @@
+name: CI Practice v3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  multi-step-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Step 1: Build
+        run: echo "Building project..."
+
+      - name: Step 2: Test
+        run: echo "Running tests..."
+      
+      - name: Step 3: Conditional Step
+        if: ${{ success() }}
+        run: echo "Tests passed → running this conditional step"
+
+      - name: Step 4: Run
+        run: echo "Simulating run phase"
+
